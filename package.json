@@ -1,0 +1,22 @@
+{
+  "name": "toast-maestro",
+  "version": "1.0.0",
+  "description": "An application aimed at dramatically-simplifying the process of organizing and hosting a Toastmaster's meeting.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcjmcdougall/toast-maestro.git"
+  },
+  "author": "Marc J. McDougall",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/marcjmcdougall/toast-maestro/issues"
+  },
+  "homepage": "https://github.com/marcjmcdougall/toast-maestro#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
