@@ -1,3 +1,5 @@
+var User = require('../models/user');
+
 module.exports = function(app, express){
 
 	var apiRouter = express.Router();
@@ -20,15 +22,48 @@ module.exports = function(app, express){
 		// Route that returns all users.
 		.get(function(req, res){
 
-			res.json({message : 'This is all the users.'});
+			// Find ALL users (no query parameter).
+			User.find(function(err, users){
+
+				if(err){ res.send(err);	}
+
+				res.json(users);
+			});
 		})
 
 		// Route that adds a new user.
 		.post(function(req, res){
 
-			res.json({message : 'This adds a new user.'});
-		});
+			// res.json({message : 'This adds a new user.'});
+			// Create a new user.
+			var user = new User();
 
+			// Populate the user's information.
+			user.name = req.body.name;
+			user.email = req.body.email;
+			user.password = req.body.password;
+			user.bio = req.body.bio;
+
+			// TODO: Add Organization.
+
+			user.save(function(err){
+
+				if(err){
+
+					// The Mongoose duplicate entry code.
+					if(err.code == 11000){
+
+						return res.json({success : false, message : 'A user with that email already exists!'});
+					}
+					else{
+
+						return res.send(err);
+					}
+				}
+
+				res.json({message : 'User created!'});
+			});
+		});
 
 	// This manages single users.
 	apiRouter.route('/user/:id')
@@ -44,6 +79,14 @@ module.exports = function(app, express){
 		.put(function(req, res){
 
 			res.json({message : 'This is updating user ' + req.params.id + '.'});
+		});
+
+	// This pulls down the current event given a particular user.
+	apiRouter.route('/user/:id/next_event')
+
+		.get(function(req, res){
+
+			res.json({message : 'This is the next event for ' + req.params.id + '.'});
 		});
 
 
@@ -80,6 +123,7 @@ module.exports = function(app, express){
 
 			res.json({message : 'This is updating event ' + req.params.id + '.'});
 		});
+
 
 	// =============
 	// ORGANIZATION API
