@@ -1,0 +1,56 @@
+# User Data
+# -----------------
+
+/users
+	GET					Return all users in the system.
+	POST				Create a new user.
+
+/user/:user
+	GET					Return a single user.
+	PUT					Update a single user.
+	DELETE				Delete a single user.
+
+/user/:user/next
+	GET 				Returns the next event for the particular user.
+
+
+
+# Organization Data
+# -----------------
+
+/organizations
+	GET 				Returns all organizations.
+	POST				Creates a new organization.
+
+/organization/:organization
+	GET 				Return a single organization.
+	PUT					Update a single organization metadata (name, description, admin).
+	DELETE 				Delete a single organization.
+
+/organization/:organization/members/
+	GET					Returns all the users assigned to a particular organization.
+	POST				Adds a user to the organization.
+
+/organization/:organization/member/:member
+	DELETE 				Removes a member from the organization (but doesn't delete the user).
+
+/organization/:organization/events/
+	GET					Returns all the events assigned to a particular organization, sorted by date.
+	POST				Adds an event to the organization.
+
+/organization/:organization/event/:event
+	DELETE 				Removes a single event from the organization (but doesnt' delete the event).
+
+
+
+# Event Data
+# -----------------
+
+/events
+	GET 				Returns all events.
+	POST				Creates a new event.
+
+/event/:event
+	GET 				Return a single event.
+	PUT					Update a single event metadata.
+	DELETE 				Delete a single event.

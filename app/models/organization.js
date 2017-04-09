@@ -6,6 +6,7 @@ var organizationSchema = new Schema({
 	name : { type : String, required : true},
 	description : String,
 	admin : { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+	members : [{ type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
 	events : [{ type: mongoose.Schema.Types.ObjectId, ref: 'Event'}]
 });
 
