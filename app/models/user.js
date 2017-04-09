@@ -7,7 +7,7 @@ var userSchema = new Schema({
 	email: { type : String, required : true, index : {unique : true}},
 	password: { type : String, required : true, select : false},
 	bio : String,
-	organization : [{ type: mongoose.Schema.Types.ObjectId, ref: 'Organization'}]
+	organization : { type: mongoose.Schema.Types.ObjectId, ref: 'Organization'}
 });
 
 

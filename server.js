@@ -27,6 +27,12 @@ app.get('/', function(req, res) {
 var apiRouter = require('./app/routes/api')(app, express);
 app.use('/api', apiRouter);
 
+// Error handling middleware.
+app.use(function(err, req, res, next){
+
+	res.status(422).send({'message' : err});
+});
+
 // Start the server, and notify the client.
 app.listen(1337);
 console.log('Listening on port 1337...');
