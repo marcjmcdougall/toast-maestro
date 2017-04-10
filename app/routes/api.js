@@ -32,7 +32,8 @@ module.exports = function(app, express){
 	apiRouter.param('user', function(req, res, next, id){
 
 		// Use mongoose to find the correct post by ID every time a post is requested.
-		var query = User.findById(id);
+		var query = User.findById(id).populate({	path: 'organization',
+    												populate: { path: 'events' } });
 
 		// Execute the query
 		query.exec(function(err, user){
@@ -133,21 +134,7 @@ module.exports = function(app, express){
 
 		.get(function(req, res, next){
 
-			// res.json({message : 'This is the next event for ' + req.user.name + '.'});
-			Organization.findById(req.user.organization, function(err, organization){
-
-				console.log(organization);
-
-				if(err){ return next(err); }
-
-				Event.findById(organization.events[0], function(err, event){
-
-					if(err){ return next(err); }
-
-					// Return the next event.
-					res.json(event);
-				})
-			});
+			res.json(req.user.organization.events[0]);
 		});
 
 
@@ -267,7 +254,8 @@ module.exports = function(app, express){
 	apiRouter.param('organization', function(req, res, next, id){
 
 		// Use mongoose to find the correct organization by ID every time a post is requested.
-		var query = Organization.findById(id);
+		var query = Organization.findById(id).populate({	path: 'members',
+    														path: 'events' });
 
 		// Execute the query
 		query.exec(function(err, organization){
@@ -359,7 +347,34 @@ module.exports = function(app, express){
 			});
 		});;
 
-	// Helped function to return the admin for a certain organization.
+	// Manages the members of an organization
+	apiRouter.route('/organization/:organization/members')
+
+		// List all the members of an organization.
+		.get(function(req, res, next){
+
+			res.json(req.organization.members);
+		})
+
+		// Add an existing user to this organization.
+		.post(function(req, res, next){
+
+			// Find the user with the specified id.
+			// User.findById(req.body.id, function(err, user){
+
+			// 	req.organization.members
+			// 	Organization.findBy
+			// }
+
+			// TODO: Perhaps add this as a function in the database object itself?
+
+			// Add them to the members array for this organization.
+
+
+			// req.organization.save();
+		});
+
+	// Helper function to return the admin for a certain organization.
 	apiRouter.route('/organization/:organization/admin')
 
 		.get(function(req, res, next){

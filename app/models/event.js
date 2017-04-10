@@ -11,7 +11,7 @@ var eventSchema = new Schema({
 		timer : { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
 		speakers : [{ type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
 		evaluators : [{ type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
-		general_evaluator : [{ type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
+		general_evaluator : { type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 	}
 });
 

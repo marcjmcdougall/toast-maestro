@@ -1,4 +1,4 @@
-# User Data
+# User Endpoints
 # -----------------
 
 /users
@@ -15,7 +15,7 @@
 
 
 
-# Organization Data
+# Organization Endpoints
 # -----------------
 
 /organizations
@@ -36,14 +36,14 @@
 
 /organization/:organization/events/
 	GET					Returns all the events assigned to a particular organization, sorted by date.
-	POST				Adds an event to the organization.
+	POST				Creates a new event and adds it to the organization.
 
 /organization/:organization/event/:event
-	DELETE 				Removes a single event from the organization (but doesnt' delete the event).
+	DELETE 				Remove a single event from the organization (but doesn't delete the event).
 
 
 
-# Event Data
+# Event Endpoints 
 # -----------------
 
 /events
@@ -52,5 +52,6 @@
 
 /event/:event
 	GET 				Return a single event.
-	PUT					Update a single event metadata.
+	PUT					Update a single event.
 	DELETE 				Delete a single event.
+
