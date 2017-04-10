@@ -153,7 +153,7 @@ module.exports = function(app, express){
 
 			if(err){ return next(err); }
 
-			if(!event){ return next(new Error('Couldn\'t find organization.')); }
+			if(!event){ return next(new Error('Couldn\'t find event.')); }
 
 			// Assign the user object to the request object.
 			req.event = event;
