@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en" ng-app="ToastMaestro"> 
 <head>
 
 	<meta charset="UTF-8"> 
@@ -19,7 +19,7 @@
 	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous" async></script> -->
 
 </head> 
-<body>
+<body ng-controller="MainController">
 	
 	<div class="jumbotron">
 
@@ -28,13 +28,16 @@
 			<h1>ToastMaestro</h1>
 			<p>Simplifying the process of setting up and running a Toastmasters meeting.</p>
 
-			<a href="/" class="btn btn-lg btn-primary">Begin.</a>
+			<a href="/" class="btn btn-lg btn-primary">Ready? {{status}}</a>
 
 		</div>
 
 	</div>
 
-	<!-- Primary JS File -->
+	<!-- AngularJS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+	<!-- ToastMaestro JS -->
 	<script type="text/javascript" src="./js/app.js"></script>
 
 </body>
