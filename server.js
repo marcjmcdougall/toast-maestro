@@ -26,7 +26,7 @@ app.use('/api', apiRouter);
 app.get('*', function(req, res) {
 
 	// Angular routing will take it from here.
-    res.sendfile('./public/views/index.html'); 
+    res.sendFile(path.join(__dirname + '/public/views/index.html')); 
 });
 
 // Error handling middleware.
