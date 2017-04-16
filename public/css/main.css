@@ -1,0 +1,35 @@
+body {
+  font-family: "Lato", sans-serif;
+  color: #000000; }
+
+h1, h2, h3, h4, h5 {
+  font-family: "Oxygen", sans-serif;
+  font-weight: bold; }
+  h1.heading, h2.heading, h3.heading, h4.heading, h5.heading {
+    text-transform: uppercase; }
+
+.navigation {
+  height: 60px; }
+  .navigation .heading {
+    line-height: 60px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: inline-block;
+    vertical-align: middle; }
+  .navigation ul {
+    list-style: none;
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 40px;
+    vertical-align: middle; }
+    .navigation ul.right {
+      float: right; }
+    .navigation ul li {
+      display: inline-block;
+      line-height: 60px; }
+      .navigation ul li:not(:last-of-type) {
+        margin-right: 10px; }
+
+.section {
+  min-height: 500px; }

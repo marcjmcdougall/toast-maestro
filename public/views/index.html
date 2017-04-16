@@ -5,6 +5,14 @@
 	<meta charset="UTF-8"> 
 	<title>Toastmaestro &mdash; Just add butter.</title> 
 
+	<!-- FONT FILES -->
+
+	<!-- Site Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700|Oxygen:400,700" rel="stylesheet">
+
+	<!-- Font Awesome -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
 	<!-- CSS FILES -->
 
 	<!-- Bootstrap CSS -->
@@ -20,15 +28,39 @@
 
 </head> 
 <body ng-controller="MainController">
+
+	<div class="navigation">
+
+		<div class="container-fluid">	
+		
+			<h3 class="heading">ToastMaestro</h3>
+
+			<ul>
+				
+				<li><a href="/">Home</a></li>
+				<li><a href="/download">Download</a></li>
+
+			</ul>
+
+			<ul class="right">
+				
+				<li><a href="/">Sign In</a></li>
+				<li><a href="/download"><i class="fa fa-user-circle"></i></a></li>
+
+			</ul>
+
+		</div>
+
+	</div>
 	
-	<div class="jumbotron">
+	<div id="hero" class="section">
 
 		<div class="container">	
 				
-			<h1>ToastMaestro</h1>
+			<h1 class="heading">ToastMaestro</h1>
 			<p>Simplifying the process of setting up and running a Toastmasters meeting.</p>
 
-			<a href="/" class="btn btn-lg btn-primary">Ready? {{status}}</a>
+			<a href="/" class="btn btn-lg btn-primary">Create an Account</a>
 
 		</div>
 

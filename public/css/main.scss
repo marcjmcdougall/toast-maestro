@@ -1,4 +1,93 @@
+// Color Scheme: https://coolors.co/ff7761-fdc23e-f9a11b-274555-cfdbd5
+$primary-color: #FF7761;
+$secondary-color: #FDC23E;
+$ternary-color: #FDC23E;
+$quadranary-color: #274555;
+
+// Complementary colors.
+$light-gray: #CFDBD5;
+$black: #000000;
+$white: #000000;
+
+// Font Selections: https://fonts.google.com/specimen/Oxygen?selection.family=Lato:400,700|Oxygen:400,700
+$header-font: 'Oxygen', sans-serif;
+$body-font: 'Lato', sans-serif;
+
+
+
 body{
 
-	// color: red;
+	font-family: $body-font;
+	color: $black;
 }
+
+h1, h2, h3, h4, h5{
+
+	font-family: $header-font;
+	font-weight: bold;
+
+	&.heading{
+
+		text-transform: uppercase;
+	}
+}
+
+// Navigation
+.navigation{
+
+	height: 60px;
+	// padding: 10px;
+
+	.heading{
+
+		line-height: 60px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	ul{
+
+		list-style: none;
+		display: inline-block;
+		padding: 0px;
+		margin: 0px;
+
+		margin-left: 40px;
+
+		vertical-align: middle;
+
+		&.right{
+
+			float: right;
+		}
+
+		li{
+
+			display: inline-block;
+			line-height: 60px;
+
+			&:not(:last-of-type){
+
+				margin-right: 10px;
+			}
+		}
+	}
+}
+
+.section{
+
+	min-height: 500px;
+}
+
+
+
+
+
+
+
+
+
+
