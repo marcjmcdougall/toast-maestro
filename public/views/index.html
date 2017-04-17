@@ -3,6 +3,12 @@
 <head>
 
 	<meta charset="UTF-8"> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<meta name="description" content="">
+    <meta name="author" content="Marc J. McDougall">
+
 	<title>Toastmaestro &mdash; Just add butter.</title> 
 
 	<!-- FONT FILES -->
@@ -33,23 +39,26 @@
 
 		<div class="container">	
 		
-			<h3 class="heading"><i class="fa fa-modx"></i></h3>
+			<h3 class="heading"><a href="/"><i class="fa fa-modx"></i></a></h3>
+			<h3 class="title">ToastMaestro</h3>
 
 			<ul>
 				
-				<li><a href="/">Home</a></li>
-				<li><a href="/">About</a></li>
-				<li><a href="/">FAQ</a></li>
-				<li><a href="/download">Download</a></li>
+				<li><a href="/home">Home</a></li>
+				<li><a href="/faq">FAQ</a></li>
+				<li><a href="/pricing">Pricing</a></li>
+				<li><a href="/support">Support</a></li>
 
 			</ul>
 
 			<ul class="right">
 				
-				<li><a href="/">Create an account</a></li>
-				<li><a href="/">Sign In</a></li>
+				<li><a href="/register">Create an account</a></li>
+				<li><a href="/login">Sign In</a></li>
 
 			</ul>
+
+			<a id="menu-toggle" href="#" ><i class="fa fa-bars"></i></a>
 
 		</div>
 
@@ -74,36 +83,79 @@
 
 		</div>
 
-		<div class="overlay"></div>
+		<div class="overlay hidden-sm hidden-xs"></div>
 
-		<video autoplay loop >
+		<video class="hidden-sm hidden-xs" autoplay loop >
 			
 			<source src="/img/spacious.mp4" type="video/mp4" />Your browser does not support the video tag. You should upgrade your browser.
         	<source src="/img/spacious.webm" type="video/webm" />Your browser does not support the video tag. You should upgrade your browser.
 
 		</video>
 
+		<div class="poster hidden-md hidden-lg hidden-xl">
+
+        </div>
+
 	</div>
 
 	<div id="benefits" class="section">
 
 		<div id="status-widget">
-		
-			<h4 class="heading">Currently Managing&hellip;</h4>
+			
+			<div class="header-icon"><i class="fa fa-gears"></i></div>
 
-			<p><span class="statistic">450</span>Events</p>
+			<h4 class="heading">Currently Managing&hellip;</h4>
+			<hr />
+
 			<div class="statistic">
 				
-				<span>450</span>
-				<p>Events</p>
+				<div>
+
+					<span>1,624</span>
+					<p>Events</p>
+
+				</div>
+
+			</div><!--
+
+			--><div class="statistic vcenter">
+				
+				<div>
+
+					<span>90</span>
+					<p>Organizations</p>
+
+				</div>
+
+			</div><!--
+
+			--><div class="statistic">
+
+				<div>
+				
+					<span>10</span>
+					<p>Districts</p>
+
+				</div>
+
+			</div><!--
+
+			--><div class="statistic">
+
+				<div>
+				
+					<span>20</span>
+					<p>Regions</p>
+
+				</div>
 
 			</div>
-			<p><span class="statistic">246</span>Organizations</p>
-			<p><span class="statistic">120</span>Districts</p>
-			<p><span class="statistic">20</span>Regions</p>
-			<p><span class="statistic">6,000</span>Members</p>
+
+			<div class="separator separator-right"></div>
+			<div class="separator separator-right separator-top"></div>
 		
 		</div>
+
 
 		<div class="separator separator-right"></div>
 
@@ -111,18 +163,18 @@
 			
 			<div class="row">
 				
-				<div class="col-md-6">
+				<div class="col-sm-5">
 					
 					<div class="benefits-text">
 
-						<h4 class="heading"><i class="fa fa-envelope-o"></i>Never send another email.</h4>
-						<p>Curabitur aliquet quam id dui posuere blandit. Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus. Cras ultricies ligula sed magna dictum porta.</p>
+						<h4><i class="fa fa-envelope-o"></i>Never send another email.</h4>
+						<p>ToastMaestro will regularly send emails out to the members of your club to ask them to sign up for roles, and when they're all filled, it'll give them the agenda.</p>
 
-						<h4 class="heading"><i class="fa fa-comments-o"></i>Focus on public speaking.</h4>
-						<p>Curabitur aliquet quam id dui posuere blandit. Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus. Cras ultricies ligula sed magna dictum porta.</p>
+						<h4><i class="fa fa-comments-o"></i>Focus on public speaking.</h4>
+						<p>With all the managerial tasks taken care of, you're free to work on what matters to you: your public speaking skills.</p>
 
-						<h4 class="heading"><i class="fa fa-clock-o"></i>Free up your time.</h4>
-						<p>Curabitur aliquet quam id dui posuere blandit. Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus. Cras ultricies ligula sed magna dictum porta.</p>
+						<h4><i class="fa fa-hourglass-half"></i>Free up your time.</h4>
+						<p>Never spend another minute following-up with forgetful club members or typing up a simple agenda template.  ToastMaestro makes it trivial to host your events.</p>
 
 					</div>
 
@@ -134,15 +186,40 @@
 
 	</div>
 
-	<div id="footer" class="section">
+	<div id="footer" class="section vcenter">
 		
 		<div class="container">
 			
 			<div class="row">
-				
-				<div></div>
-				<p>This is the footer.</p>
 
+				<div class="col-sm-2">
+
+					<ul class="site-map">
+						
+						<li><a href="/">Home</a></li>
+						<li><a href="/faq">FAQ</a></li>
+						<li><a href="/pricing">Pricing</a></li>
+						<li><a href="/about">Support</a></li>						
+						<li><a href="/press">Press Kit</a></li>
+						<li><a href="/legal">Legal</a></li>
+
+					</ul>
+
+				</div>
+				
+				<div class="col-sm-10 copyright">
+
+				<h2 class="hidden-sm hidden-md hidden-lg hidden-xl"><i class="fa fa-modx"></i></h2>
+
+					<div>
+						<p>All rights reserved, &copy; 2017 ToastMaestro Inc.</p>
+						<p>Engineered by <a href="https://www.kilobytestudios.org" target="_blank">Kilobyte Studios</a></p>
+					</div>
+
+					<h2 class="hidden-xs"><i class="fa fa-modx"></i></h2>
+
+				</div>
+				
 			</div>
 
 		</div>

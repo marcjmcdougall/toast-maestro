@@ -1,7 +1,7 @@
 // Color Scheme: https://coolors.co/ff7761-fdc23e-f9a11b-274555-cfdbd5
 $primary-color: #FF7761;
 $secondary-color: #FDC23E;
-$ternary-color: #FDC23E;
+$ternary-color: #F9A11B;
 $quadranary-color: #274555;
 
 // Complementary colors.
@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5{
 
 	padding: 0px 10px;
 
-	transition: 0.5s background-color, 0.5s border-color, 0.5s opacity, 0.5s transform;
+	transition: 0.5s background-color, 0.5s border-color, 0.5s opacity, 0.5s transform, 0.5s box-shadow;
 
 	&.btn-primary{
 
@@ -117,6 +117,22 @@ h1, h2, h3, h4, h5{
 
 	color: $white;
 
+	.title{
+
+		display: none;
+	}
+
+	a#menu-toggle{
+
+		color: $white;
+		font-size: 24px;
+		line-height: 60px;
+
+		float: right;
+
+		display: none;
+	}
+
 	.heading{
 
 		line-height: 60px;
@@ -125,6 +141,11 @@ h1, h2, h3, h4, h5{
 
 		display: inline-block;
 		vertical-align: middle;
+
+		a{
+
+			color: $white;
+		}
 	}
 
 	ul{
@@ -155,7 +176,6 @@ h1, h2, h3, h4, h5{
 			a{
 
 				color: $white;
-
 				transition: 0.5s color;
 
 				&:hover{
@@ -226,6 +246,18 @@ h1, h2, h3, h4, h5{
 			&:hover{
 
 				transform: translateY(-5px);
+
+				box-shadow: 0px 0px 60px -5px rgba(0, 0, 0, 0.08);
+				-webkit-box-shadow: 0px 0px 60px -5px rgba(0,0,0,0.08);
+				-moz-box-shadow: 0px 0px 60px -5px rgba(0,0,0,0.08);
+
+				-webkit-box-shadow: 0px 0px 80px 0px rgba(255,119,97,1);
+				-moz-box-shadow: 0px 0px 80px 0px rgba(255,119,97,1);
+				box-shadow: 0px 0px 80px 0px rgba(255,119,97,1);
+
+				box-shadow: 0px 10px 60px -5px rgba(0, 0, 0, 0.25);
+				-webkit-box-shadow: 0px 10px 60px -5px rgba(0,0,0,0.25);
+				-moz-box-shadow: 0px 10px 60px -5px rgba(0,0,0,0.25);
 			}
 		}
 	}
@@ -246,18 +278,33 @@ h1, h2, h3, h4, h5{
 		background: linear-gradient(91deg, rgba(255,119,97,1) 0%, rgba(255,119,97,1) 38%, rgba(255,119,97,0) 100%); /* w3c */
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF7761', endColorstr='#FF7761',GradientType=1 ); /* ie6-9 */
 	}
+
+	.poster{
+
+		position: absolute;
+		width: 100%;
+		height: 100%;
+
+		background-image: linear-gradient(90deg, rgba(255,119,97,1) 0%, rgba(255,119,97,1) 38%, rgba(255,119,97,0) 100%), url('../img/spacious.jpg');
+		background-size: cover;
+		background-position: center;
+
+	}
 }
 
 #status-widget{
 
 	position: absolute;
 
+	text-align: center;
+
 	// border: 1px solid black;
-	top: -250px;
+	top: -175px;
 	right: 0px;
-	z-index: 3;
+	z-index: 4;
 	margin-right: 10%;
 	padding: 25px;
+	padding-top: 15px;
 	background-color: $white;
 
 	// -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 90%);
@@ -268,33 +315,112 @@ h1, h2, h3, h4, h5{
 	box-shadow: 0px 0px 60px -5px rgba(0,0,0,0.08);
 
 	width: 400px;
-	height: 500px;
+	height: 325px;
+
+	i{
+		color: $primary-color;
+	}
+
+	hr{
+
+		width: 50px;
+	}
 
 	h4{
 
 		margin-top: 0px;
+		margin-bottom: 25px;
+		// font-size: 18px;
+		font-weight: normal;
 	}
 
-	p{
+	.header-icon{
 
-		line-height: 24px;
-		vertical-align: middle;
+		font-size: 36px;
+		line-height: 48px;
+		margin-bottom: 10px;
 	}
 
-	.statistic{
+	.statistic{	
 
-		span{
+		display: inline-block;
 
-			color: $primary-color;
-			font-weight: bold;
-			font-size: 24px;
+		padding: 10px 0px;
+
+		width: 50%;
+		min-height: 100px;
+
+		&.full{
+
+			width: 100%;
+			margin-top: 40px;
+
+			span{
+
+				font-size: 64px;
+				text-shadow: 4px 4px 5px rgba(150, 150, 150, 0.3);
+			} 
+
+			p{
+
+				font-size: 1.5em;
+			}
+		}
+
+		div{
+
+			text-align: center;
+			margin: 0 auto;
+
+			line-height: 1.0;
+
+			span{
+
+				color: $primary-color;
+				font-weight: bold;
+				font-size: 36px;
+			}	
+
+			p{
+
+				text-transform: lowercase;
+				margin-top: 5px;
+			}
 		}	
+	}
 
-		p{
+	.separator-top{
 
-			display: inline-block;
-			margin-left: 20px;
-		}	
+		top: -38px;
+		height: 50px;
+	}
+
+	.separator-right:not(.separator-top){
+
+		top: initial;
+		bottom: -90px;
+
+		height: 100px;
+
+		background-color: $white;
+
+		border-bottom: 10px solid $primary-color;
+
+		-webkit-box-shadow: 0px 30px 60px -5px rgba(0, 0, 0, 0.16);
+		-moz-box-shadow: 0px 30px 60px -5px rgba(0, 0, 0, 0.16);
+		box-shadow: 0px 30px 60px -5px rgba(0, 0, 0, 0.16);
+
+		&::after{
+
+			content: '';
+			position: relative;
+			height: 20px;
+			width: 400px;
+
+			z-index: 5;
+
+			background-color: $primary-color;
+		}
 	}
 }
 
@@ -309,6 +435,8 @@ h1, h2, h3, h4, h5{
 
 			margin-bottom: 60px;
 			max-width: 400px;
+
+			margin-left: 28px;
 		}
 
 		i{
@@ -321,10 +449,173 @@ h1, h2, h3, h4, h5{
 
 #footer{
 
-	background-color: $white;
+	// border-top: 5px solid $secondary-color;
+
+	background-color: $primary-color;
 	min-height: 200px;
+
+	color: $white;
+
+	ul.site-map{
+
+		padding: 0px;
+		margin: 0px;
+
+		list-style: none;
+
+		border-right: 1px dotted $white;
+
+		li{
+
+			&:not(:last-of-type){
+
+				margin-bottom: 5px;
+			}
+
+			a{
+
+				color: $white;
+				text-transform: lowercase;
+				font-size: 12px;
+
+				&:hover{
+
+					color: $secondary-color;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	.copyright{
+
+		text-align: right;
+		margin-top: 60px;
+
+		h2{
+
+			display: inline-block;
+			margin: 0px;
+		}
+
+		p{
+
+			font-size: 12px;
+			margin-bottom: 0px;
+
+			&:last-of-type{
+
+				opacity: 0.6;
+			}
+		}
+
+		a{
+ 
+			color: $white;
+			text-decoration: underline;
+
+			&:hover{
+
+				color: $secondary-color;
+			}
+		}
+
+		div{
+
+			display: inline-block;
+			margin-right: 15px;
+		}
+	}
 }
 
+
+// =====
+// Media Queries
+// =====
+
+@media only screen and (max-width: 768px){
+
+	#status-widget{
+
+		margin-right: 0%;
+	}
+}
+
+@media only screen and (max-width: 600px){
+
+	.navigation{
+
+		.title{
+
+			display: inline-block;
+
+			line-height: 60px;
+			font-size: 14px;
+
+			margin: 0px;
+			margin-left: 10px;
+		}
+
+		a#menu-toggle{
+
+			display: inline-block;
+		}
+
+		ul{
+
+			display: none;
+		}
+	}
+}
+
+@media only screen and (max-width: 450px){
+
+	#hero{
+
+		// padding-bottom: 200px;
+		margin-bottom: 150px;
+
+		.poster{
+
+			background-image: linear-gradient(90deg, rgba(255,119,97,0.7) 0%, rgba(255,119,97,0.7) 100%), url('../img/spacious.jpg');
+		}
+	}
+
+	#status-widget{
+
+		// margin-right: 0%;
+		width: 100%;
+	}
+
+	#benefits{
+
+		padding-top: 250px;
+	}
+
+	#footer{
+
+		ul.site-map{
+
+			border-right: none;
+			text-align: center;
+
+			margin-top: 40px;
+		}
+
+		.copyright{
+
+			text-align: center;
+			margin-bottom: 20px;
+			margin-top: 40px;
+
+			h2{
+
+				width: 100%;
+				margin-bottom: 25px;
+			}
+		}
+	}
+}
 
 
 
